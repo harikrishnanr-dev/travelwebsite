@@ -1,0 +1,267 @@
+:root {
+  --primary-color: #3685fb;
+  --primary-color-dark: #2f73d9;
+  --secondary-color: #fafcff;
+  --text-dark: #0d213f;
+  --text-light: #767268;
+  --extra-light: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fffae6;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(#ff5f00, rgba(9, 9, 9, 0.86)),
+    url(assets/bg1.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 5px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8%;
+}
+
+.logo {
+  width: 100px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.content {
+  justify-content: center;
+  margin: 10px 20px;
+  margin-top: 16%;
+  color: #fff;
+  max-width: 750px;
+  align-items: center;
+}
+.content h1 {
+  color: #fff;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 85px;
+
+  /* margin-bottom: 25px; */
+}
+
+/* popular places */
+
+#popular {
+  margin: 20% 8% 0 8%;
+}
+
+.heading_popular {
+  text-align: center;
+}
+.heading_popular h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.card-grid {
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.card {
+  width: 24rem;
+  height: 30rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: #ffffff;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
+  flex-basis: 30%;
+  margin: 10px;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-out;
+  background: none;
+}
+
+.card h2 {
+  position: absolute;
+  inset: auto auto 30px 30px;
+  margin: 0;
+  transition: inset 0.3s 0.3s ease-out;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.card p,
+.card a {
+  
+  justify-content: center;
+  position: absolute;
+  opacity: 0;
+  max-width: 80%;
+  transition: opacity 0.3s ease-out;
+}
+
+.card p {
+  inset: auto auto 80px 30px;
+}
+
+.card a {
+  inset: auto auto 40px 30px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.614);
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card:hover h2 {
+  inset: auto auto 260px 30px;
+  transition: inset 0.3s ease-out;
+  z-index: 1;
+}
+
+.card:hover p,
+.card:hover a {
+  opacity: 1;
+  transition: opacity 0.5s 0.1s ease-in;
+  z-index: 1;
+}
+
+.card:hover img {
+  transition: opacity 0.3s ease-in;
+  opacity: 1;
+}
+
+/* about */
+#about {
+  margin: 5% 8% 0px 8%;
+}
+.heading {
+  text-align: center;
+}
+.heading h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+.about_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+  margin-top: 5%;
+}
+.abt_img img {
+  border-radius: 10px;
+  width: 24rem;
+  height: 36rem;
+}
+.about_details p {
+  font-size: 18px;
+  margin-top: 20%;
+}
+
+#map{
+  align-items: center;
+}
+/* footer */
+.footer {
+  background-color: var(--text-dark);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  color: var(--secondary-color);
+}
+
+.footer__col h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.footer__col h3 span {
+  color: #3685fb;
+}
+
+.footer__col p {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__col p:hover {
+  color:#3685fb;
+}
+
+.footer__col p span {
+  font-weight: 600;
+}
+
+.footer__col h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.footer__bar {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  border-top: 1px solid var(--text-light);
+}
